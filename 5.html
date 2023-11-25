@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1>Ajax and php question</h1>
+    <img src="../../../1-n.jpeg" alt="loading">
+
+    <form id="myForm">
+        
+        <label for="name">Enter name: </label>
+        <input type="text" name="name" id="name"> <br><br>
+
+        <label for="dob">Date of Birth: </label>
+        <input type="date" name="dob" id="dob">
+
+
+        <button onclick="greet(event)">Submit</button>
+
+
+        <p id="output"></p>
+
+    </form>
+
+    <script>
+        function greet(){
+            event.preventDefault();
+            var request = new XMLHttpRequest();
+            request.open('POST','action.php')
+            var form = document.getElementById('myform')
+            var formData = {
+                name: document.getElementById('name').value,
+                dob: document.getElementById('dob').value
+            }
+
+            console.log(formData);
+
+            request.onreadystatechange = function(){
+                if(this.readyState==4 && this.status==200){
+                    alert('ready state');
+                    document.getElementById('output').innerText = 'using request '
+                }
+                else{
+                    alert('not ready');
+                    document.getElementById('output').innerText = 'not working request '
+
+                }
+            }
+
+            request.send(formData);
+        }
+    </script>
+
+</body>
+</html>

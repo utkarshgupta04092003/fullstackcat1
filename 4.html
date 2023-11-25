@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1 id="heading">Sugar</h1>
+
+    <input type="text" id="s">
+    <button onclick="sugar()">Sugar</button><br><br>
+    
+    
+    <input type="number" id="l">
+    <button onclick="lipid();">Lipid</button>
+
+
+    <script>
+
+        function sugar(){
+            let s = document.getElementById('s').value;
+
+            document.getElementById('heading').innerText += s;
+        }
+
+        function lipid(){
+            let l = parseInt(document.getElementById('l').value);
+
+            if(l < 100)
+                document.getElementById('heading').innerText = 'Low Lipid';
+            else
+                document.getElementById('heading').innerText = 'High Lipid';            
+        }
+
+    </script>
+
+    
+    
+</body>
+</html>

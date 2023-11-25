@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <label for="">Enter text</label>
+    <input type="text" id="text" ><br><br>
+
+    <button id="btn">Evaluate</button>
+
+    <script>
+
+        var btn = document.getElementById('btn');
+        btn.addEventListener('click',charCount);
+        btn.addEventListener('click',wordCount);
+        btn.addEventListener('click',sentenceCount);
+        
+        function charCount(){
+            var text = document.querySelector('input').value;
+            console.log('hellow: ',text);
+            let count = 0;
+            for(let i=0;i<text.length;i++){
+                console.log(i)
+                count++;
+            }
+            alert('Total Characters: '+count);
+        }
+        function wordCount(){
+            var text = document.querySelector('input').value;
+            console.log('hellow: ',text);
+            let count = 1;
+            for(let i=0;i<text.length;i++){
+                if(text[i] === ' ')
+                count++;
+            }
+            alert('Total words: '+count);
+            // alert('word working');
+        }
+        function sentenceCount(){
+            var text = document.querySelector('input').value;
+            console.log('hellow: ',text);
+            let count = 0;
+            for(let i=0;i<text.length;i++){
+                if(text[i] == '.')
+                count++;
+            }
+            alert('Total words: '+count);       
+        }
+
+    </script>
+
+
+</body>
+</html>

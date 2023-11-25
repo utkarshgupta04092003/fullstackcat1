@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>ABC Bank</h1>
+
+    <label for="">First Name:</label>
+    <input type="text" name="" id="fname"><br><br>
+    
+    <label for="">Last Name:</label>
+    <input type="text" name="" id="lname" required><br><br>
+    
+    <label for="">Age: </label>
+    <input type="number" name="" id="age" required><br><br>
+    
+    <label for="">DOB: </label>
+    <input type="date" name="" id="dob" required><br><br>
+
+    <label for="">Mobile Number: </label>
+    <input type="number" name="" id="" required>
+
+    <button onclick="generate();">Generate Password</button>
+
+
+    <p>Generated Password: <span id="password"></span></p>
+    
+
+    <script>
+        function generate(){
+            var fname = document.getElementById('fname').value;
+            let lname = document.getElementById('lname').value;
+            let age = parseInt(document.getElementById('age').value);
+            let dob = new Date(document.getElementById('dob').value);
+            let month = parseInt(dob.getMonth())+1;
+
+            var pass = document.getElementById('password');
+            pass.innerText = 'workinggg';
+            pass.innerText = fname[0]+lname[lname.length-1]+parseInt(age+month);
+
+        }
+    </script>
+</body>
+</html>
